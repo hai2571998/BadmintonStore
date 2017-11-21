@@ -17,10 +17,6 @@
 					<img style="margin-bottom:-3px" src="<?php echo public_url(); ?>/site/images/email.png"> Email: hai2571998
 				</a>
 			</p>
-			<p>
-				<a rel="nofollow" href="skype:tuyencnt90">
-					<img style="margin-bottom:-3px" src="<?php echo public_url(); ?>/site/images/skype.png"> Skype: tuyencnt90</a>
-			</p>
 		</div>
 	</div>
 </div>

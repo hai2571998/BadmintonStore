@@ -26,9 +26,10 @@
 				?>
 			</div>
 			<div class="content">
-				<?php
-					$this->load->view($temp, $this->data);
-				?>
+				<?php if(isset($message)): ?>
+				
+				<?php endif; ?>
+				<?php $this->load->view($temp, $this->data);?>
 			</div>
 			<div class="right">
 				<?php 

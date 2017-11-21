@@ -42,7 +42,7 @@
 						</div>
 
 						<div class="formRow">
-							<label class="formLeft">Hình ảnh : anh cai date_create_from_format
+							<label class="formLeft">Hình ảnh :
 								<span class="req">*</span>
 							</label>
 							<div class="formRight">
@@ -55,7 +55,7 @@
 						</div>
 
 						<div class="formRow">
-							<label class="formLeft">Ảnh cua manh hung:</label>
+							<label class="formLeft">Ảnh kèm theo:</label>
 							<div class="formRight">
 								<div class="left">
 									<input type="file" multiple="" name="image_list[]" id="image_list" size="25">
@@ -86,8 +86,8 @@
 						<!-- Price -->
 						<div class="formRow">
 							<label for="param_discount" class="formLeft">
-								Giảm giá  cho manh hung(VNĐ)
-								<span></span>:
+								Giảm giá (VNĐ):
+								<span></span>
 							</label>
 							<div class="formRight">
 								<span>
@@ -103,12 +103,12 @@
 
 
 						<div class="formRow">
-							<label for="param_cat" class="formLeft">Thể loại cua manh hung:
+							<label for="param_cat" class="formLeft">Thể loại:
 								<span class="req">*</span>
 							</label>
 							<div class="formRight">
 								<select name="catalog" class="left">
-									<option value="">Danh mục cua manh hung</option>
+									<option value="">Danh mục</option>
 									<!-- kiem tra danh muc co danh muc con hay khong -->
 									<?php foreach ($catalogs as $row):?>
 									<?php if(count($row->subs) > 0):?>
@@ -135,7 +135,7 @@
 						<!-- warranty -->
 						<div class="formRow">
 							<label for="param_warranty" class="formLeft">
-								Bảo hành boi manh hung:
+								Bảo hành:
 							</label>
 							<div class="formRight">
 								<span class="oneFour">
@@ -148,7 +148,7 @@
 						</div>
 
 						<div class="formRow">
-							<label for="param_sale" class="formLeft">Tặng quà cho manh hung:</label>
+							<label for="param_sale" class="formLeft">Tặng quà:</label>
 							<div class="formRight">
 								<span class="oneTwo">
 									<textarea cols="" rows="4" id="param_gifts" name="gifts"></textarea>
@@ -203,7 +203,7 @@
 
 					<div class="tab_content pd0" id="tab3" style="display: none;">
 						<div class="formRow">
-							<label class="formLeft">Nội dung cua manh hung:</label>
+							<label class="formLeft">Nội dung:</label>
 							<div class="formRight">
 								<textarea class="editor" id="param_content" name="content"></textarea>
 								<div class="clear error" name="content_error"></div>

@@ -82,8 +82,8 @@
 						<td style="width:60px;">Mã số</td>
 						<td>Tên</td>
 						<td>Giá</td>
-						<td style="width:75px;">Ngày tạo deo nho'</td>
-						<td style="width:120px;">Hành động code cc</td>
+						<td style="width:75px;">Ngày tạo</td>
+						<td style="width:120px;">Hành động</td>
 					</tr>
 				</thead>
 

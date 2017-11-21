@@ -110,12 +110,12 @@
 
 
 						<div class="formRow">
-							<label for="param_cat" class="formLeft">Thể loại cua manh hung:
+							<label for="param_cat" class="formLeft">Thể loại:
 								<span class="req">*</span>
 							</label>
 							<div class="formRight">
 								<select name="catalog" class="left">
-									<option value="">Danh mục lựa chọn cho manh hung</option>
+									<option value="">Danh mục lựa chọn</option>
 									<!-- kiem tra danh muc co danh muc con hay khong -->
 									<?php foreach ($catalogs as $row):?>
 									<?php if(count($row->subs) > 0):?>
@@ -142,7 +142,7 @@
 						<!-- warranty -->
 						<div class="formRow">
 							<label for="param_warranty" class="formLeft">
-								Bảo hành :
+								Bảo hành:
 							</label>
 							<div class="formRight">
 								<span class="oneFour">
@@ -155,7 +155,7 @@
 						</div>
 
 						<div class="formRow">
-							<label for="param_sale" class="formLeft">Tặng quàvcho manh hung:</label>
+							<label for="param_sale" class="formLeft">Tặng quà:</label>
 							<div class="formRight">
 								<span class="oneTwo">
 									<textarea cols="" rows="4" id="param_gifts" name="gifts"><?php echo $product->gifts; ?></textarea>
@@ -195,7 +195,7 @@
 						</div>
 
 						<div class="formRow">
-							<label for="param_meta_key" class="formLeft">Meta keywords wwtf:</label>
+							<label for="param_meta_key" class="formLeft">Meta keywords:</label>
 							<div class="formRight">
 								<span class="oneTwo">
 									<textarea cols="" rows="4" _autocheck="true" id="param_meta_key" name="meta_key"><?php echo $product->meta_key; ?></textarea>
@@ -210,7 +210,7 @@
 
 					<div class="tab_content pd0" id="tab3" style="display: none;">
 						<div class="formRow">
-							<label class="formLeft">Nội dung cai console.clear();:</label>
+							<label class="formLeft">Nội dung:</label>
 							<div class="formRight">
 								<textarea class="editor" id="param_content" name="content"><?php echo $product->content; ?></textarea>
 								<div class="clear error" name="content_error"></div>

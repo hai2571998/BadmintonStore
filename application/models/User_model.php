@@ -1,5 +1,5 @@
 <?php
 	class User_model extends MY_Model {
-		var $table = 'admin';
+		var $table = 'user';
 	}
 ?>

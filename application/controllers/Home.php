@@ -17,6 +17,9 @@
 			$product_buy = $this->product_model->get_list($input);
 			$this->data['product_buy'] = $product_buy;
 
+			$message = $this->session->flashdata('message');
+			$this->data['message'] = $message;
+
 			$this->data['temp'] = 'site/home/index';
 			$this->load->view('site/layout', $this->data);
 		}
