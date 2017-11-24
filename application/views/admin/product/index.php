@@ -129,9 +129,9 @@
 							</a>
 
 							<div class="f11">
-								Đã bán ship hong:
-								<?php echo $row->view; ?> | Xem:
-								<?php echo $row->buyed; ?>
+								Đã bán:
+								<?php echo $row->buyed; ?> | Xem:
+								<?php echo $row->view; ?>
 							</div>
 						</td>
 

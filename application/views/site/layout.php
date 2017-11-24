@@ -27,7 +27,7 @@
 			</div>
 			<div class="content">
 				<?php if(isset($message)): ?>
-				
+					<p><strong>Thông báo: </strong><?php echo $message; ?></p>
 				<?php endif; ?>
 				<?php $this->load->view($temp, $this->data);?>
 			</div>

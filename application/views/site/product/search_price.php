@@ -38,7 +38,7 @@
 						<?php echo $row->view; ?>
 					</b>
 				</p>
-				<a class='button' href="them-vao-gio-9.html" title='Mua ngay'>Mua ngay</a>
+				<a class='button' href="<?php echo base_url('cart/add/'.$row->id); ?>" title='Mua ngay'>Mua ngay</a>
 				<div class='clear'></div>
 			</div>
 		</div>

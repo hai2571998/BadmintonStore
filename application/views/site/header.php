@@ -55,8 +55,13 @@
 		<li class=""><a href="tin-tuc.html">Tin tức</a></li>
 		<li class=""><a href="video.html">Video</a></li>
 		<li class=""><a href="lien-he.html">Liên hệ</a></li>
+		<?php if(isset($user_info)): ?>
+		<li class=""><a href="<?php echo site_url('user/'); ?>">Xin chào: <?php echo $user_info->name; ?></li>
+		<li class=""><a href="<?php echo site_url('user/logout'); ?>">Đăng xuất</a></li>
+		<?php else: ?>
 		<li class=""><a href="<?php echo site_url('user/register'); ?>">Đăng ký</a></li>
-		<li class=""><a href="dang-nhap.html">Đăng nhập</a></li>
+		<li class=""><a href="<?php echo site_url('user/login'); ?>">Đăng nhập</a></li>
+		<?php endif; ?>
 	</ul>
 </div>
 <!-- End menu -->

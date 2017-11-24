@@ -1,23 +1,28 @@
 <?php
-	class MY_Controller extends CI_Controller{
+class MY_Controller extends CI_Controller
+{
 		//bien gui du lieu
-		public $data = array();
-		
-		function __construct(){
-			parent::__construct();
-			$controller = $this->uri->segment(1);
-			switch($controller){
-				case 'admin': {
+	public $data = array();
+
+	function __construct()
+	{
+		parent::__construct();
+		$controller = $this->uri->segment(1);
+		switch ($controller) {
+			case 'admin':
+				{
 					$this->load->helper('admin');
 					$this->_check_login();
 					break;
-				} default: {
+				}
+			default:
+				{
 					$this->load->model('catalog_model');
 					$input = array();
 					$input['where'] = array('parent_id' => 0);
 					$catalog_list = $this->catalog_model->get_list($input);
-					
-					foreach($catalog_list as $row){
+
+					foreach ($catalog_list as $row) {
 						$input['where'] = array('parent_id' => $row->id);
 						$subs = $this->catalog_model->get_list($input);
 						$row->subs = $subs;
@@ -34,20 +39,31 @@
 					$this->load->library('cart');
 					$total_items = $this->cart->total_items();
 					$this->data['total_items'] = $total_items;
+
+					//kiem tra dang nhap thanh vien hay chua?
+					$user_id_login = $this->session->userdata('user_id_login');
+					$this->data['user_id_login'] = $user_id_login;
+					//neu dang nhap thanh cong lay thong tin thanh vien
+					if ($user_id_login) {
+						$this->load->model('user_model');
+						$user_info = $this->user_model->get_info($user_id_login);
+						$this->data['user_info'] = $user_info;
+					}
 				}
-			}
-		}
-		
-		private function _check_login(){
-			$controller = $this->uri->rsegment('1');
-			$controller = strtolower($controller);
-			$login = $this->session->userdata('login');
-			if(!$login && $controller != 'login'){
-				redirect(admin_url('login'));
-			}
-			if($login && $controller == 'login'){
-				redirect(admin_url('home'));
-			}
 		}
 	}
+
+	private function _check_login()
+	{
+		$controller = $this->uri->rsegment('1');
+		$controller = strtolower($controller);
+		$login = $this->session->userdata('login');
+		if (!$login && $controller != 'login') {
+			redirect(admin_url('login'));
+		}
+		if ($login && $controller == 'login') {
+			redirect(admin_url('home'));
+		}
+	}
+}
 ?>
