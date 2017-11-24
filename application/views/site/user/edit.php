@@ -6,7 +6,7 @@
 	<div class="box-content-center register">
 		<!-- The box-content-center -->
 		<h1>Chỉnh sửa thông tin thành viên</h1>
-		<form enctype="multipart/form-data" action="<?php echo site_url('user/register'); ?>" method="post" class="t-form form_action">
+		<form enctype="multipart/form-data" action="<?php echo site_url('user/edit'); ?>" method="post" class="t-form form_action">
 			<div class="form-row">
 				<label class="form-label" for="param_email">Email:
 					<span class="req">*</span>
@@ -47,7 +47,7 @@
 					<span class="req">*</span>
 				</label>
 				<div class="form-item">
-					<input type="text" value="<?php echo set_value('name'); ?>" name="name" id="name" class="input">
+					<input type="text" value="<?php echo $user->name; ?>" name="name" id="name" class="input">
 					<div class="clear"></div>
 					<div id="name_error" class="error"><?php echo form_error('name'); ?></div>
 				</div>
@@ -58,7 +58,7 @@
 					<span class="req">*</span>
 				</label>
 				<div class="form-item">
-					<input type="text" value="<?php echo set_value('phone'); ?>" name="phone" id="phone" class="input">
+					<input type="text" value="<?php echo $user->phone; ?>" name="phone" id="phone" class="input">
 					<div class="clear"></div>
 					<div id="phone_error" class="error"><?php echo form_error('phone'); ?></div>
 				</div>
@@ -70,7 +70,7 @@
 					<span class="req">*</span>
 				</label>
 				<div class="form-item">
-					<textarea name="address" id="address" class="input"><?php echo set_value('address'); ?></textarea>
+					<textarea name="address" id="address" class="input"><?php echo $user->address; ?></textarea>
 					<div class="clear"></div>
 					<div id="address_error" class="error"><?php echo form_error('address'); ?></div>
 				</div>
@@ -80,7 +80,7 @@
 			<div class="form-row">
 				<label class="form-label">&nbsp;</label>
 				<div class="form-item">
-					<input type="submit" name="submit" value="Đăng ký" class="button">
+					<input type="submit" name="submit" value="Cập nhập" class="button">
 				</div>
 			</div>
 		</form>

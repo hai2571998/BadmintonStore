@@ -20,7 +20,7 @@
 				<tbody>
 					<?php $total_amount = 0; ?>
 					<?php foreach($carts as $row): ?>
-					<?php $total_amount += $row['price']; ?>
+					<?php $total_amount += $row['subtotal']; ?>
 					<tr>
 						<td>
 							<?php echo $row['name']; ?>
@@ -50,6 +50,7 @@
 					<tr>
 						<td colspan="5">
 							<button type="submit">Cập nhật</button>
+							<a href="<?php echo site_url('order/checkout'); ?>" class="button">Mua hàng</a>
 						</td>
 					</tr>
 				</tbody>

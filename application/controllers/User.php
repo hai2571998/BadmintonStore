@@ -149,6 +149,39 @@ class User extends MY_Controller
 			redirect();
 		}
 		$this->data['user'] = $user;
+
+		$this->load->library('form_validation');
+		$this->load->helper('form');
+		if ($this->input->post()) {
+			$password = $this->input->post('password');
+
+			$this->form_validation->set_rules('name', 'Tên', 'required|min_length[8]');
+			if($password){
+				$this->form_validation->set_rules('password', 'Password', 'required|min_length[6]');
+				$this->form_validation->set_rules('re_password', 'Nhập lại Password', 'matches[password]');
+			}
+			$this->form_validation->set_rules('phone', 'Số điện thoại', 'required|max_length[11]');
+			$this->form_validation->set_rules('address', 'Địa chỉ', 'required');
+
+			if ($this->form_validation->run()) {
+				$data = array(
+					'name' => $this->input->post('name'),
+					'phone' => $this->input->post('phone'),
+					'address' => $this->input->post('address'),
+				);
+
+				if($password){
+					$data['password'] = md5($password);
+				}
+				if ($this->user_model->update($user_id, $data)) {
+					$this->session->set_flashdata('message', 'Cập nhập thông tin thành viên thành công');
+				} else {
+					$this->session->set_flashdata('message', 'Cập nhập thông tin thành viên thất bại');
+				}
+				redirect(site_url('user'));
+			}
+		}
+
 		$this->data['temp'] = 'site/user/edit';
 		$this->load->view('site/layout', $this->data);
 	}
